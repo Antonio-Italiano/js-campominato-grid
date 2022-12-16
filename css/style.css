@@ -10,8 +10,8 @@ main {
 }
 
 #grid .col{
-    height: calc(100% / 8);
-    min-width: calc(100% / 8);
+    height: calc(100% / 10);
+    min-width: calc(100% / 10);
     border: 1px solid black;
 }
 
