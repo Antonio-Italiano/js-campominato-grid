@@ -3,18 +3,18 @@ main {
     height: 600px;
 }
 
-#grill {
+#grid {
     height: 500px;
     width: 500px;
     border: 1px solid black;
 }
 
-#grill .col{
+#grid .col{
     height: calc(100% / 8);
     min-width: calc(100% / 8);
     border: 1px solid black;
 }
 
-#grill .col .clicked{
+#grid .col .clicked{
     background-color: lightblue;
 }
