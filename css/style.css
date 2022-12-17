@@ -13,8 +13,11 @@ main {
     height: calc(100% / 10);
     min-width: calc(100% / 10);
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#grid .col .clicked{
+.clicked{
     background-color: lightblue;
 }
