@@ -11,41 +11,58 @@ const createCell = (content) => {
     const cell = document.createElement('div');
     cell.append(content);
     cell.classList.add('col');
+    // Aggiungo l'event listner
+    cell.addEventListener('click', () => {
+            
+        // Aggiungo la classe quando è active 
+        cell.classList.add('clicked');
+        console.log(content);
+    })
+    
     return cell;
+
 }
 
 
 // PRENDO ELEMENTI DOM 
 const grid = document.getElementById('grid');
-const select = document.getElementById('select').value;
+const select = document.getElementById('select');
 const button = document.getElementById('btn');
 // console.log(grid)
 
 /--------------- OPERAZIONI PRELIMINARI ------------/
 
+const selectValue = select.value;
+
+
 // IMPOSTAZIONI GRIGLIA
-const rows = 10;
-const cels = 10;
+let rows = 10;
+let cels = 10;
+
+if (selectValue == '2'){
+    rows = 9;
+    cels = 9;
+} else if (selectValue == '3'){
+    rows = 7;
+    cels = 7;
+}
 const totalCels = rows * cels;
+
+console.log(totalCels , selectValue);
 
 
 /-------------------- EVENTI -----------------------/
 // EVENT LISTNER SUL BOTTONE
-button.addEventListener('click', () => {    
+button.addEventListener('click', () => {  
+    
+    grid.innerHTML = '';
+    
         
     // STAMPO LE CELLE IN PAG 
     for(let i = 1; i < totalCels + 1; i++) {
         
         // Creo la cella invocando la funzione createCell
         const cell = createCell(i);
-        
-        // Aggiungo l'event listner
-        cell.addEventListener('click', () => {
-            
-            // Aggiungo la classe quando è active 
-            cell.classList.add('clicked');
-            console.log(i);
-        })
 
         // Aggiungo cell come figlio di grid 
         grid.appendChild(cell);
